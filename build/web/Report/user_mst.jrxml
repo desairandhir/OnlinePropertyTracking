@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="user_mst" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ce282cf1-d747-4b7d-a53b-453377ce9ef6">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     user_mst.`fname` AS user_mst_fname,
+     user_mst.`lname` AS user_mst_lname,
+     user_mst.`gender` AS user_mst_gender,
+     user_mst.`DOB` AS user_mst_DOB,
+     user_mst.`address` AS user_mst_address,
+     user_mst.`contact_no` AS user_mst_contact_no,
+     user_mst.`email` AS user_mst_email,
+     user_mst.`username` AS user_mst_username,
+     user_mst.`pass_word` AS user_mst_pass_word,
+     user_mst.`uid` AS user_mst_uid
+FROM
+     `user_mst` user_mst]]>
+	</queryString>
+	<field name="user_mst_fname" class="java.lang.String"/>
+	<field name="user_mst_lname" class="java.lang.String"/>
+	<field name="user_mst_gender" class="java.lang.String"/>
+	<field name="user_mst_DOB" class="java.sql.Date"/>
+	<field name="user_mst_address" class="java.lang.String"/>
+	<field name="user_mst_contact_no" class="java.lang.Long"/>
+	<field name="user_mst_email" class="java.lang.String"/>
+	<field name="user_mst_username" class="java.lang.String"/>
+	<field name="user_mst_pass_word" class="java.lang.String"/>
+	<field name="user_mst_uid" class="java.lang.Integer"/>
+	<group name="user_mst_uid">
+		<groupExpression><![CDATA[$F{user_mst_uid}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="59" width="100" height="20" uuid="f2227a8e-a1bb-4f13-874a-ac47d0905365"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[User_Master]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="700" y="59" width="100" height="20" uuid="8c65e3fb-0baf-4406-a02d-449fe08585fb"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="700" y="39" width="100" height="20" uuid="dfc0a2da-9dc2-4340-b84e-4c03f4029535"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="320" y="24" width="222" height="35" uuid="8adf0a66-6e82-415a-9a1d-35696ff62826"/>
+				<textElement>
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Property Tracking]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="11" width="802" height="1" uuid="105deb98-9f60-4587-a956-7594ed738e30"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="60" height="20" uuid="6fbe347a-b7c3-4194-9940-0307c2b469ce"/>
+				<text><![CDATA[fname]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="60" y="0" width="68" height="20" uuid="9501befe-94b8-4490-a7be-b404b5abfade"/>
+				<text><![CDATA[lname]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="128" y="0" width="61" height="20" uuid="de9f5d24-0b5a-4f31-bb31-84cacf3ae0bf"/>
+				<text><![CDATA[gender]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="189" y="0" width="106" height="20" uuid="25f7d9a2-c9ce-43fd-bbca-13b6040afe8f"/>
+				<text><![CDATA[DOB]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="295" y="0" width="84" height="20" uuid="c0048d46-a3d4-4e47-b5bb-be2a95682a3d"/>
+				<text><![CDATA[address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="379" y="1" width="80" height="20" uuid="0bf86e93-b2a1-42c9-90f2-4b491ddbab67"/>
+				<text><![CDATA[contact_no]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="459" y="1" width="140" height="20" uuid="a72c92d9-e7eb-400d-b1c9-eeed97a6e187"/>
+				<text><![CDATA[email]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="599" y="1" width="67" height="20" uuid="c842c733-2ea2-4e39-877c-d9e96daa6d7e"/>
+				<text><![CDATA[username]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="666" y="1" width="84" height="20" uuid="04e0ffb0-03f2-42dd-8359-dc3043188051"/>
+				<text><![CDATA[password]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="750" y="1" width="50" height="20" uuid="7489da12-4c92-4569-b917-d480c2bab9b6"/>
+				<text><![CDATA[uid]]></text>
+			</staticText>
+			<line>
+				<reportElement x="2" y="20" width="800" height="1" uuid="1824c37c-e627-4db8-87c2-bb98b059dfc4"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="52" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="60" height="20" uuid="e959cc6f-1ae7-40e2-99b8-ad42a587f52b"/>
+				<textFieldExpression><![CDATA[$F{user_mst_fname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="60" y="0" width="68" height="20" uuid="2a8e927e-5214-4c56-bae8-5ca716a6693c"/>
+				<textFieldExpression><![CDATA[$F{user_mst_lname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="128" y="0" width="61" height="20" uuid="2fcdef25-e0f8-4772-af50-e853e2e2c9bb"/>
+				<textFieldExpression><![CDATA[$F{user_mst_gender}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="189" y="0" width="106" height="20" uuid="b0b77bf1-eba9-4484-913a-1c9d870e83d9"/>
+				<textFieldExpression><![CDATA[$F{user_mst_DOB}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="295" y="0" width="84" height="20" uuid="5285e71d-abec-4014-9fc5-bbda16aa68bf"/>
+				<textFieldExpression><![CDATA[$F{user_mst_address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="379" y="0" width="80" height="20" uuid="cfd2bae0-3363-49f1-b195-cfd1feffbeb3"/>
+				<textFieldExpression><![CDATA[$F{user_mst_contact_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="459" y="0" width="140" height="20" uuid="dc68774f-176b-4b4f-a293-ff90f49df7bc"/>
+				<textFieldExpression><![CDATA[$F{user_mst_email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="599" y="0" width="67" height="20" uuid="b0a6ec5f-7295-4570-9204-05bd2246c5f5"/>
+				<textFieldExpression><![CDATA[$F{user_mst_username}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="666" y="0" width="84" height="20" uuid="f7c59607-389b-48f3-b3ea-ecba0fcdca39"/>
+				<textFieldExpression><![CDATA[$F{user_mst_pass_word}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="750" y="0" width="52" height="20" uuid="dc6ecc9c-c7ee-4298-bf1b-a3ded692fac6"/>
+				<textFieldExpression><![CDATA[$F{user_mst_uid}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
