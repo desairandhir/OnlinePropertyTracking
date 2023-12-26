@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Interest" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2f60812b-3d62-4b32-b125-73262536e1cc">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     interest.`fname` AS interest_fname,
+     interest.`lname` AS interest_lname,
+     interest.`address` AS interest_address,
+     interest.`contact_no` AS interest_contact_no,
+     interest.`email` AS interest_email,
+     interest.`property_name` AS interest_property_name,
+     interest.`uid` AS interest_uid
+FROM
+     `interest` interest]]>
+	</queryString>
+	<field name="interest_fname" class="java.lang.String"/>
+	<field name="interest_lname" class="java.lang.String"/>
+	<field name="interest_address" class="java.lang.String"/>
+	<field name="interest_contact_no" class="java.lang.Long"/>
+	<field name="interest_email" class="java.lang.String"/>
+	<field name="interest_property_name" class="java.lang.String"/>
+	<field name="interest_uid" class="java.lang.Integer"/>
+	<group name="interest_uid">
+		<groupExpression><![CDATA[$F{interest_uid}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="92" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="45" width="100" height="34" uuid="68f108fe-2d76-48dd-b0e3-ea4bcd358ab5"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Show Interest]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="702" y="39" width="100" height="20" uuid="b79330cc-5caa-4101-adbb-45cfb10b9694"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="702" y="59" width="100" height="20" uuid="39e47fb4-e11e-465c-8216-be9fb4880477"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="357" y="7" width="184" height="38" uuid="5fc25de9-5c36-4453-bf2a-3d758144a44e"/>
+				<textElement>
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Property Tracking]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="16" width="802" height="1" uuid="9483aed5-8dac-48f7-b60c-8a5a7b0d4bf6"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="114" height="20" uuid="6f40098c-741d-458d-89ee-58d747ce648e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fname]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="114" y="0" width="114" height="20" uuid="2ab8bbe0-818d-4d9c-a63b-7e73a2d40f9a"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Lname]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="228" y="0" width="114" height="20" uuid="97c06d35-4490-4f1e-a9c7-5d88b689eb6f"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="342" y="0" width="114" height="20" uuid="4e96f531-b406-4ec0-812c-f6affcfd8171"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Contact_no]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="456" y="0" width="114" height="20" uuid="b1d100e2-65f5-49ef-9d09-c95d9daf27d8"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Email]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="570" y="0" width="114" height="20" uuid="484c224f-eb74-422a-a5a2-1e7ab4d62961"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Property_name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="684" y="0" width="114" height="20" uuid="959af043-4996-4628-b6b3-06fc9fd4ea8c"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Uid]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="20" width="802" height="1" uuid="1ea74b2f-ac3f-44ca-b882-b4089b6ae01c"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="42" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="114" height="20" uuid="e33dbba0-7692-40a2-ab8b-40b69aa502c0"/>
+				<textFieldExpression><![CDATA[$F{interest_fname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="114" y="0" width="114" height="20" uuid="17c4a829-b6c0-4fdc-8177-47a038171447"/>
+				<textFieldExpression><![CDATA[$F{interest_lname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="228" y="0" width="114" height="20" uuid="21315ee9-72d5-4ba6-a257-016a84ded652"/>
+				<textFieldExpression><![CDATA[$F{interest_address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="342" y="0" width="114" height="20" uuid="91adb5f6-bec9-47fd-85a9-963e581b93cd"/>
+				<textFieldExpression><![CDATA[$F{interest_contact_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="456" y="0" width="114" height="20" uuid="6dbbe9be-dde9-4423-afdf-cef894ad259a"/>
+				<textFieldExpression><![CDATA[$F{interest_email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="570" y="0" width="114" height="20" uuid="4dc580d8-ff14-41ed-9949-e3f97af31d6f"/>
+				<textFieldExpression><![CDATA[$F{interest_property_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="684" y="0" width="114" height="20" uuid="5e0231bb-cd1c-462b-a32f-9d366b4de200"/>
+				<textFieldExpression><![CDATA[$F{interest_uid}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
